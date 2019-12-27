@@ -41,7 +41,10 @@ end_xml_file = """  </gresource>
 </gresources>"""
 
 
-gst="/usr/share/gnome-shell/gnome-shell-theme.gresource"
+if os.path.isfile("/usr/share/gnome-shell/gnome-shell-theme.gresource.backup"):
+    gst="/usr/share/gnome-shell/gnome-shell-theme.gresource.backup"
+else:
+    gst="/usr/share/gnome-shell/gnome-shell-theme.gresource"
 
 
 options = {"background-repeat": "no-repeat", 
